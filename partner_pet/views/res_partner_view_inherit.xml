@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_partner_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='internal_notes']" position='after'>
+	    	    <page name="pet_info" string="Pet Information">
+                    <field name="pet_ids" mode="kanban">
+                        <kanban>
+                            <field name="id"/>
+                            <field name="name"/>
+                            <field name="specie"/>
+                            <field name="pet_birthday"/>
+                            <field name="company_id"/>
+                            <field name="partner_id"/>
+                            <field name="sex"/>
+                            <field name="race"/>
+                            <field name="color"/>
+                            <field name="image"/>
+                            <templates>
+                                <t t-name="kanban-box">
+                                    <div t-attf-class="oe_kanban_global_click">
+                                        <div class="o_kanban_image">                                    
+                                            <img alt="Avatar" t-att-src="kanban_image('res.partner.pet', 'image',record.id.raw_value)"/>                                
+                                        </div>
+                                        <div class="oe_kanban_details d-flex flex-column">
+                                            <field name="company_id" invisible="1"/>
+                                            <field name="partner_id" invisible="1"/>
+                                            <h3><strong><field name="name"/></strong></h3>
+                                            <ul>
+                                                <li><strong>Specie:</strong> <field name="specie"/></li>
+                                                <li><strong>Birthdate:</strong> <field name="pet_birthday"/></li>
+                                                <li><strong>Sex:</strong> <field name="sex"/></li>
+                                                <li><strong>Race:</strong> <field name="race"/></li>
+                                                <li><strong>Color:</strong> <field name="color"/></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </t>
+                            </templates>
+                        </kanban>
+                        <form string="Partner Pet Information">
+                            <sheet>
+                                <field name="company_id" invisible="1"/>
+                                <field name="partner_id" invisible="1"/>
+                                <field name="image" widget="image" class="oe_avatar"/>
+                                <field name="specie" widget="radio" options="{'horizontal': true}"/>
+                                <hr/>
+                                <group>
+                                    <field name="name" string="Pet Name" placeholder="Pet's Name"/>
+                                </group>
+                                <hr/>
+                                <group>
+                                    <group>
+                                        <field name="sex" widget="radio" options="{'horizontal': true}"/>
+                                        <field name="sterilized_castrated"/>
+                                        <field name="race"/>
+                                        <field name="color"/>
+                                        <field name="weight"/>
+                                    </group>
+                                    <group>
+                                        <field name="pet_birthday"/>
+                                        <field name="pleasures"/>
+                                        <field name="activity"/>                                        
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="nutritional_conditions"/> 
+                                    <field name="special_cares"/>
+                                    <field name="toys"/>
+                                </group>
+                            </sheet>
+                        </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
