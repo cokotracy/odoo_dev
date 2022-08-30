@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stock_scrap_report" model="ir.actions.report">
+        <field name="name">Reporte de Rechazo en Puertas</field>
+        <field name="model">stock.scrap</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ci_stock.stock_scrap_report_template</field>
+        <field name="report_file">ci_stock.stock_scrap_report</field>
+        <field name="binding_model_id" ref="model_stock_scrap"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

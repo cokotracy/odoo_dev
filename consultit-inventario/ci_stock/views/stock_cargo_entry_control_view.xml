@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- stock_cargo_entry_control Window Action -->
+    <record id="stock_cargo_entry_control_action" model="ir.actions.act_window">
+        <field name="name">Control Ingreso de Carga</field>
+        <field name="res_model">stock.cargo.entry.control</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- stock_cargo_entry_control  Menu -->
+    <menuitem
+        id="menu_stock_cargo_entry_control"
+        action="stock_cargo_entry_control_action"
+        parent="stock.menu_stock_warehouse_mgmt"
+        sequence="6"/>
+    
+    <!-- stock_cargo_entry_control Tree -->
+    <record id="stock_cargo_entry_control_tree" model="ir.ui.view">
+        <field name="name">stock.cargo.entry.control.tree</field>
+        <field name="model">stock.cargo.entry.control</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="customer_id" />
+                <field name="date" />
+                <field name="nro_container" />
+                <field name="dua" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- stock_cargo_entry_control Form -->
+    <record id="stock_cargo_entry_control_form" model="ir.ui.view">
+        <field name="name">stock.cargo.entry.control.form</field>
+        <field name="model">stock.cargo.entry.control</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Crear Movimiento" name="action_create_stock_move" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group name="customer">
+                        <field name="customer_id" />
+                    </group>
+                    <group name="stock_cargo_entry_data" string="Hoja de Control de Ingreso de Carga">
+                        <group name="stock_cargo_entry_data1">
+                            <field name="date" />
+                            <field name="nro_container" />
+                            <field name="dua" />
+                            <field name="chamberos" />
+                        </group>
+                        <group name="stock_cargo_entry_data2">
+                            <field name="hora_ingreso" widget="float_time"/>
+                            <field name="hora_inicio" widget="float_time"/>
+                            <field name="hora_fin" widget="float_time"/>
+                            <field name="cant_personas" />
+                            <br />
+                            <field name="po" />
+                        </group>
+                    </group>
+                    <group name="nota_embarque">
+                        <field name="nota_embarque" />
+                    </group>
+                    <group name="picking" string="Movimiento de inventario">
+                        <field name="picking_id" />
+                    </group>
+                    <group name="batch" string="Batch">
+                        <field name="batch_ids" nolabel="1">
+                            <tree editable="bottom">
+                                <field name="cargo_entry_id" invisible="1"/>
+                                <field name="nro_pallet" />
+                                <field name="pallet_state" />
+                                <field name="cant_bag" />
+                                <field name="subtotal_pallet" />
+                                <field name="subtotal_bag" />
+                                <field name="merc_type" />
+                            </tree>
+                        </field>
+                    </group>
+                    <group name="stock_cargo_entry_data3">
+                        <group>
+                            <field name="despal_fracc" />
+                            <field name="faltante" />
+                        </group>
+                        <group>
+                            <field name="total_tarima" />
+                            <field name="total_bulto" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="embalaje" widget="radio"/>
+                    </group>
+                    <group name="obervation_responsible">
+                        <group>
+                            <field name="observation" />
+                        </group>
+                        <group>
+                            <field name="responsible" />
+                        </group>
+                    </group>
+                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

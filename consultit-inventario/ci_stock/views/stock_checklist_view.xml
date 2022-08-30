@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- stock checklist Window Action -->
+    <record id="stock_checklist_action" model="ir.actions.act_window">
+        <field name="name">Checklist de Recibo</field>
+        <field name="res_model">stock.checklist</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- stock checklist  Menu -->
+    <menuitem
+        id="menu_stock_checklist"
+        action="stock_checklist_action"
+        parent="stock.menu_stock_warehouse_mgmt"
+        sequence="100"/>
+    
+    <!-- Stock Checklist Tree -->
+    <record id="stock_checlist_tree" model="ir.ui.view">
+        <field name="name">stock.checklist.tree</field>
+        <field name="model">stock.checklist</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nro_doc" />
+                <field name="type" />
+                <field name="phase" />
+                <field name="document_owner" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- Stock Checklist Form -->
+    <record id="stock_checlist_form" model="ir.ui.view">
+        <field name="name">stock.checklist.form</field>
+        <field name="model">stock.checklist</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="checklist_data" string="Datos del Checklist">
+                        <group name="checklist_data_1">
+                            <field name="nro_doc" />
+                            <field name="type" />
+                            <field name="phase" />
+                            <field name="document_owner" />
+                        </group>
+                        <group name="checklist_data_2">
+                            <field name="title" />
+                            <field name="nro_revision" />
+                            <field name="date_published" />
+                            <field name="classification" />
+                        </group>
+                    </group>
+                    <b><p style="font-size: 12px">COPIA NO CONTROLADA - COPIA IMPRESA VÁLIDA POR 5 DÍAS - LAS EXCEPCIONES SON FORMULARIOS QUE SON VÁLIDOS POR LA DURACIÓN DE USO</p></b>
+                    <group name="checklist_data_3" string="Checklist de Recibo">
+                        <group name="instructions">
+                            <b><p style="font-size: 16px">Instrucciones</p></b>
+                            <br />
+                            <p>Anote un check (✓) si se cumple el criterio.</p>
+                            <br />
+                            <p>Deje en blanco si no se cumple el criterio.</p>
+                            <br />
+                        </group>
+                        <group name="checklist_data_4">
+                            <field name="date" />
+                            <field name="nro_container" />
+                        </group>
+                    </group>
+                    <group name="before_material_download" string="Antes de la descarga de Material">
+                        <group name="before_material_download_1">
+                            <field name="dua_match"/>
+                            <br />
+                            <field name="nro_label_truck" />
+                            <br />
+                            <field name="label_integrity" />
+                        </group>
+                        <group name="before_material_download_2">
+                            <field name="termokin_condition" />
+                            <br />
+                            <field name="temperature_value" />
+                            <br />
+                            <b><p style="font-size: 10px">Ambiente(11°C - 30°C) // Refrigerado(4°C - 10°C) // Congelado(-16°C - -20°C)</p></b>
+                            <br />
+                            <field name="container_closed"/>
+                            <br />
+                        </group>
+                    </group>
+                    <group name="after_material_download" string="Durante y Después de la descarga de Material">
+                        <group name="after_material_download_1">
+                            <field name="strange_odors" />
+                            <br />
+                            <field name="dust_mist" />
+                            <br />
+                            <field name="spill_hole" />
+                            <br />
+                            <field name="cleanliness_acceptable" />
+                            <br />
+                            <field name="load_mixed" />
+                            <br />
+                            <field name="clean_dust_debris" />
+                            <br />
+                            <field name="odor_leaking_contaminated" />
+                        </group>
+                        <group name="after_material_download_2">
+                            <field name="pallet_condition" />
+                            <br />
+                            <field name="sack_bag_drum_leaking" />
+                            <br />
+                            <field name="material_supplier_id" />
+                            <br />
+                            <field name="label_info" />
+                            <br />
+                            <field name="security_mechanism" />
+                            <br />
+                            <field name="temperature_material" />
+                        </group>
+                    </group>
+                    <group name="responsible" string="Elaborado Por">
+                        <field name="responsible" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

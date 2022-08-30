@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stock_checklist_report" model="ir.actions.report">
+        <field name="name">Checklist de recibo</field>
+        <field name="model">stock.checklist</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ci_stock.stock_checklist_report_template</field>
+        <field name="report_file">ci_stock.stock_checklist_report</field>
+        <field name="binding_model_id" ref="model_stock_checklist"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

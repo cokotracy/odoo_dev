@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Stock Scrap Form -->
+    <record id="stock_scrap_view_form_inherit" model="ir.ui.view">
+        <field name="name">stock.scrap.form.inherit</field>
+        <field name="model">stock.scrap</field>
+        <field name="inherit_id" ref="stock.stock_scrap_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[1]" position="replace" >
+                <group name="scrap_data" string="Información de Rechazo de Producto">
+                    <group name="scrap_data_1">
+                        <field name="company_id" invisible="1"/>
+                        <field name="partner_id" string="Proveedor"/>
+                        <field name="po_line" />
+                        <field name="nro_invoice" />
+                        <field name="nro_material" />
+                        <field name="vendor_batch_material" />
+                        <field name="nro_container" />
+                        <field name="product_id" />
+                        <field name="product_uom_id" />
+                        <field name="product_uom_category_id" />
+                        <field name="lot_id" />
+                        <field name="cant_received" />
+                        <field name="scrap_qty" string="Cantidad Rechazada"/>
+                    </group>
+                    <group name="scrap_data_2">
+                        <field name="date" />
+                        <field name="desc_damage" widget="radio"/>
+                        <field name="other_description" attrs=" {'invisible': [ ('desc_damage','!=','o' ) ]} "/>
+                    </group>
+                    <group name="scrap_data_3">
+                        <field name='images_ids' nolabel="1">
+                            <tree editable="bottom">
+                                <field name='scrap_id' invisible="1"/>
+                                <field name='image' widget="image"/>
+                            </tree>
+                        </field>
+                    </group>
+                </group>
+                <group name="description">
+                    <field name="description" string="Descripción del evento"/>
+                </group>
+                <group name="scrap_data_2">
+                    <group>
+                        <field name="recibo"/>
+                    </group>
+                    <group>
+                        <field name="revisado"/>
+                    </group>
+                </group>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes" >
+                <attribute name="readonly">False</attribute>
+            </xpath>
+        </field>
+    </record>
+    
+</odoo>
