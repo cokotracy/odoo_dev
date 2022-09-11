@@ -21,6 +21,7 @@
         <field name="model">stock.cargo.entry.control</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="sheet_number" />
                 <field name="customer_id" />
                 <field name="date" />
                 <field name="nro_container" />
@@ -37,16 +38,21 @@
             <form>
                 <header>
                     <button string="Crear Movimiento" name="action_create_stock_move" type="object" class="oe_highlight"/>
+                    <button string="Notificar Usuario" name="action_user_notification" type="object" class="oe_highlight"/>
                 </header>
                 <sheet>
                     <group name="customer">
                         <field name="customer_id" />
+                    </group>
+                    <group name="sheet_number">
+                        <field name="sheet_number" />
                     </group>
                     <group name="stock_cargo_entry_data" string="Hoja de Control de Ingreso de Carga">
                         <group name="stock_cargo_entry_data1">
                             <field name="date" />
                             <field name="nro_container" />
                             <field name="dua" />
+                            <field name="mov_tica" />
                             <field name="chamberos" />
                         </group>
                         <group name="stock_cargo_entry_data2">
@@ -56,6 +62,8 @@
                             <field name="cant_personas" />
                             <br />
                             <field name="po" />
+                            <br />
+                            <field name="user_id" />
                         </group>
                     </group>
                     <group name="nota_embarque">
@@ -65,17 +73,7 @@
                         <field name="picking_id" />
                     </group>
                     <group name="batch" string="Batch">
-                        <field name="batch_ids" nolabel="1">
-                            <tree editable="bottom">
-                                <field name="cargo_entry_id" invisible="1"/>
-                                <field name="nro_pallet" />
-                                <field name="pallet_state" />
-                                <field name="cant_bag" />
-                                <field name="subtotal_pallet" />
-                                <field name="subtotal_bag" />
-                                <field name="merc_type" />
-                            </tree>
-                        </field>
+                        <field name="batch_ids" nolabel="1"/>
                     </group>
                     <group name="stock_cargo_entry_data3">
                         <group>
@@ -88,7 +86,7 @@
                         </group>
                     </group>
                     <group>
-                        <field name="embalaje" widget="radio"/>
+                        <field name="embalaje_ids" widget="many2many_checkboxes"/>
                     </group>
                     <group name="obervation_responsible">
                         <group>
@@ -98,8 +96,12 @@
                             <field name="responsible" />
                         </group>
                     </group>
-                    
                 </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                    <field name="activity_ids" />
+                </div>
             </form>
         </field>
     </record>

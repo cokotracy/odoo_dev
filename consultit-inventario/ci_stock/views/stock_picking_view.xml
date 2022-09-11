@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Stock Scrap Form -->
+    <record id="stock_view_picking_form_inherit" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='picking_type_id']" position="attributes" >
+                <attribute name="required">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="after" >
+                <field name="control_id" />
+            </xpath>
+            <xpath expr="//field[@name='location_dest_id']" position="after" >
+                <field name="level" />
+            </xpath>
+            <xpath expr="//page[@name='note']" position="after" >
+                <page name="tarima" string="Información de Tarimas">
+                    <group name="tarima2" string="Información de Tarima">
+                        <field name="pallet_select_ids" widget="many2many_checkboxes" string="Tipo Tarima"/>
+                    </group>
+                </page>
+            </xpath>
+            <xpath expr="//page[1]" position="after">
+                <page name="oper_data" string="Datos de la Operación">
+                    <group name="fila1" string="Datos de la Operación">
+                        <group>
+                            <field name="dua" />
+                        </group>
+                        <group>
+                            <field name="nro_bl" />
+                        </group>
+                    </group>
+                    <group name="fila2">
+                        <group>
+                            <field name="nro_viaje" />
+                        </group>
+                        <group>
+                            <field name="nro_ut" />
+                        </group>
+                    </group>
+                    <group name="fila3">
+                        <group>
+                            <field name="name_edit" string="Mov. Inv."/>
+                        </group>
+                        <group>
+                            <field name="fecha_ingreso" />
+                        </group>
+                    </group>
+                    <group name="fila4">
+                        <field name="mercaderia" />
+                    </group>
+                    <group name="fila5">
+                        <group>
+                            <field name="bag"/>
+                        </group>
+                        <group>
+                            <field name="pallet"/>
+                        </group>
+                        <group>
+                            <field name="peso" />
+                        </group>
+                    </group>
+                    <group name="fila6">
+                        <field name="manifiesto" />
+                    </group>
+                    <group name="fila7">
+                        <field name="consignatario" />
+                    </group>
+                </page>
+            </xpath>
+        </field>    
+    </record>
+    
+</odoo>

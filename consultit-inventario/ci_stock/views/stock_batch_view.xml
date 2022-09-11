@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <!-- stock_batch Tree -->
+    <record id="stock_batch_tree" model="ir.ui.view">
+        <field name="name">stock.batch.tree</field>
+        <field name="model">stock.batch</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nro_batch" />
+                <field name="nro_pedido" />
+                <field name="nro_orden" />
+                <field name="vendor" />
+                <field name="product_id" />
+                <field name="lot_id" />
+                <field name="pallet_id" />
+                <field name="cant_bag" />
+                <field name="subtotal_pallet" />
+                <field name="subtotal_bag" />
+                <field name="merc_type" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- stock_batch Form -->
+    <record id="stock_batch_form" model="ir.ui.view">
+        <field name="name">stock.batch.form</field>
+        <field name="model">stock.batch</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="batch_data" string="Datos del Batch">
+                        <field name="nro_batch" />
+                        <field name="nro_pedido" />
+                        <field name="nro_orden" />
+                        <field name="vendor" />
+                    </group>
+                    <group name="product_data" string="Producto">
+                        <field name="product_id" />
+                        <field name="lot_id" />
+                        <field name="cant" />
+                        <field name="merc_type" />
+                    </group>
+                    <group name="pallet_data" string="Bultos y Tarimas">
+                        <field name="cant_bag" />
+                        <field name="cant_pallet" />
+                        <field name="pallet_id" />
+                        <field name="pallet_select_ids" widget="many2many_checkboxes" string="Tipo Tarima"/>
+                    </group>
+                    <group name="subtotales">
+                        <group name="subtotal1">
+                            <field name="subtotal_bag" />
+                        </group>
+                        <group name="subtotal1">
+                            <field name="subtotal_pallet" /> 
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

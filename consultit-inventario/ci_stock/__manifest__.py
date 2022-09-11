@@ -18,14 +18,20 @@
     'version': '14.0.0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['stock', 'stock_picking_batch', 'product', 'barcodes', 'digest'],
+    'depends': ['stock', 'stock_picking_batch', 'product', 'barcodes', 'digest', 'mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'data/data.xml',
+        'views/stock_dua_view.xml',
+        'views/stock_container_view.xml',
         'views/stock_cargo_entry_control_view.xml',
         'views/stock_scrap_view.xml',
         'views/stock_checklist_view.xml',
+        'views/stock_picking_view.xml',
+        'views/stock_pallet_view.xml',
+        'views/stock_batch_view.xml',
         'report/stock_scrap_report.xml',
         'report/stock_scrap_report_template.xml',
         'report/stock_cargo_entry_control_report.xml',
