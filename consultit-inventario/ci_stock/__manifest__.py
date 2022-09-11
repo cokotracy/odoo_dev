@@ -15,34 +15,21 @@
     # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Inventory/Inventory',
-    'version': '14.0.0.1',
+    'version': '14.0.0.2',
 
     # any module necessary for this one to work correctly
-    'depends': ['stock', 'stock_picking_batch', 'product', 'barcodes', 'digest', 'mail'],
+    'depends': ['base', 'fleet', 'stock', 'mail'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'data/data.xml',
-        'views/stock_dua_view.xml',
-        'views/stock_container_view.xml',
-        'views/stock_cargo_entry_control_view.xml',
-        'views/stock_scrap_view.xml',
-        'views/stock_checklist_view.xml',
-        'views/stock_picking_view.xml',
-        'views/stock_pallet_view.xml',
-        'views/stock_batch_view.xml',
-        'report/stock_scrap_report.xml',
-        'report/stock_scrap_report_template.xml',
-        'report/stock_cargo_entry_control_report.xml',
-        'report/stock_cargo_entry_control_report_template.xml',
-        'report/stock_checklist_report.xml',
-        'report/stock_checklist_report_template.xml',
         # 'views/views.xml',
         # 'views/templates.xml',
+        'views/stock_cargo_entry_control_view.xml',
+        'views/stock_fleet_container_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-        # 'demo/demo.xml',
+        'demo/demo.xml',
     ],
 }

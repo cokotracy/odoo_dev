@@ -11,3 +11,4 @@ class StockDUA(models.Model):
     reg_date = fields.Date('Fecha registro')
     nro_envio = fields.Char('Nro. Envío')
     mov_tica = fields.Char('Movimiento TICA')
+    container_id = fields.Many2one('stock.fleet.container', 'Nro. Contenedor')

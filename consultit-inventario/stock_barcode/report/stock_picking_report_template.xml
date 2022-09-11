@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="stock_picking_report_template" name="stock_picking_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="row" style="border: 1px solid black;">
+                            <div class="col-6" style="border: 1px solid black;">
+                                Nro. DUA: 
+                                <br />
+                                <span t-field="o.dua"/>
+                            </div>
+                            <div class="col-6" style="border: 1px solid black;">
+                                Nro. BL: 
+                                <br />
+                                <span t-field="o.nro_bl"/>
+                            </div>
+                        </div>
+                        <div class="row" style="border: 1px solid black;">
+                            <div class="col-6" style="border: 1px solid black;">
+                                Nro. Viaje: 
+                                <br />
+                                <span t-field="o.nro_viaje"/>
+                            </div>
+                            <div class="col-6" style="border: 1px solid black;">
+                                Nro. UT: 
+                                <br />
+                                <span t-field="o.nro_ut"/>
+                            </div>
+                        </div>
+                        <div class="row" style="border: 1px solid black;">
+                             Mercaderia: 
+                            <br />
+                             <span t-field="o.mercaderia"/>
+                        </div>
+                        <div class="row" style="border: 1px solid black;">
+                            <div class="col-6" style="border: 1px solid black;">
+                                Bultos: 
+                                <br />
+                                <span t-field="o.bag"/>
+                            </div>
+                            <div class="col-6" style="border: 1px solid black;">
+                                Peso: 
+                                <br />
+                                <span t-field="o.peso"/>
+                            </div>
+                        </div>
+                        <div class="row" style="border: 1px solid black;">
+                             Manifiesto: 
+                            <br />
+                             <span t-field="o.manifiesto"/>
+                        </div>
+                        <div class="row" style="border: 1px solid black;">
+                             Consignatario: 
+                            <br />
+                             <span t-field="o.consignatario"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

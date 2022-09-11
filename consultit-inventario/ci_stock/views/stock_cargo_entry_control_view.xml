@@ -13,8 +13,8 @@
         id="menu_stock_cargo_entry_control"
         action="stock_cargo_entry_control_action"
         parent="stock.menu_stock_warehouse_mgmt"
-        sequence="6"/>
-    
+        sequence="3"/>
+
     <!-- stock_cargo_entry_control Tree -->
     <record id="stock_cargo_entry_control_tree" model="ir.ui.view">
         <field name="name">stock.cargo.entry.control.tree</field>
@@ -24,8 +24,6 @@
                 <field name="sheet_number" />
                 <field name="customer_id" />
                 <field name="date" />
-                <field name="nro_container" />
-                <field name="dua" />
             </tree>
         </field>
     </record>
@@ -42,17 +40,17 @@
                 </header>
                 <sheet>
                     <group name="customer">
-                        <field name="customer_id" />
+                        <field name="customer_id" string="Cliente"/>
                     </group>
                     <group name="sheet_number">
-                        <field name="sheet_number" />
+                        <field name="sheet_number" string="Nro. Hoja de Control"/>
                     </group>
                     <group name="stock_cargo_entry_data" string="Hoja de Control de Ingreso de Carga">
                         <group name="stock_cargo_entry_data1">
                             <field name="date" />
-                            <field name="nro_container" />
-                            <field name="dua" />
-                            <field name="mov_tica" />
+                            <field name="container_id" placeholder='Seleccione el nro de Dua para rellenar este campo.'/>
+                            <field name="dua_id" />
+                            <field name="mov_tica" placeholder='Seleccione el nro de Dua para rellenar este campo.'/>
                             <field name="chamberos" />
                         </group>
                         <group name="stock_cargo_entry_data2">
@@ -69,33 +67,6 @@
                     <group name="nota_embarque">
                         <field name="nota_embarque" />
                     </group>
-                    <group name="picking" string="Movimiento de inventario">
-                        <field name="picking_id" />
-                    </group>
-                    <group name="batch" string="Batch">
-                        <field name="batch_ids" nolabel="1"/>
-                    </group>
-                    <group name="stock_cargo_entry_data3">
-                        <group>
-                            <field name="despal_fracc" />
-                            <field name="faltante" />
-                        </group>
-                        <group>
-                            <field name="total_tarima" />
-                            <field name="total_bulto" />
-                        </group>
-                    </group>
-                    <group>
-                        <field name="embalaje_ids" widget="many2many_checkboxes"/>
-                    </group>
-                    <group name="obervation_responsible">
-                        <group>
-                            <field name="observation" />
-                        </group>
-                        <group>
-                            <field name="responsible" />
-                        </group>
-                    </group>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" />
@@ -105,5 +76,4 @@
             </form>
         </field>
     </record>
-
 </odoo>

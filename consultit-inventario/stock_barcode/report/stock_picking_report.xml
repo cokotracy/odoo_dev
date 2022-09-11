@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="stock_picking_report" model="ir.actions.report">
+        <field name="name">Reporte de Operación</field>
+        <field name="model">stock.picking</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">stock_barcode.stock_picking_report_template</field>
+        <field name="report_file">stock_barcode.stock_picking_report</field>
+        <field name="binding_model_id" ref="model_stock_picking"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

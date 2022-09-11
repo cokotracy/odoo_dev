@@ -2,9 +2,9 @@
   <data>
     <!-- explicit list view definition -->
 <!--
-    <record model="ir.ui.view" id="ha_stock.list">
-      <field name="name">ha_stock list</field>
-      <field name="model">ha_stock.ha_stock</field>
+    <record model="ir.ui.view" id="ci_stock.list">
+      <field name="name">ci_stock list</field>
+      <field name="model">ci_stock.ci_stock</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -17,18 +17,18 @@
 
     <!-- actions opening views on models -->
 <!--
-    <record model="ir.actions.act_window" id="ha_stock.action_window">
-      <field name="name">ha_stock window</field>
-      <field name="res_model">ha_stock.ha_stock</field>
+    <record model="ir.actions.act_window" id="ci_stock.action_window">
+      <field name="name">ci_stock window</field>
+      <field name="res_model">ci_stock.ci_stock</field>
       <field name="view_mode">tree,form</field>
     </record>
 -->
 
     <!-- server action to the one above -->
 <!--
-    <record model="ir.actions.server" id="ha_stock.action_server">
-      <field name="name">ha_stock server</field>
-      <field name="model_id" ref="model_ha_stock_ha_stock"/>
+    <record model="ir.actions.server" id="ci_stock.action_server">
+      <field name="name">ci_stock server</field>
+      <field name="model_id" ref="model_ci_stock_ci_stock"/>
       <field name="state">code</field>
       <field name="code">
         action = {
@@ -42,19 +42,19 @@
 
     <!-- Top menu item -->
 <!--
-    <menuitem name="ha_stock" id="ha_stock.menu_root"/>
+    <menuitem name="ci_stock" id="ci_stock.menu_root"/>
 -->
     <!-- menu categories -->
 <!--
-    <menuitem name="Menu 1" id="ha_stock.menu_1" parent="ha_stock.menu_root"/>
-    <menuitem name="Menu 2" id="ha_stock.menu_2" parent="ha_stock.menu_root"/>
+    <menuitem name="Menu 1" id="ci_stock.menu_1" parent="ci_stock.menu_root"/>
+    <menuitem name="Menu 2" id="ci_stock.menu_2" parent="ci_stock.menu_root"/>
 -->
     <!-- actions -->
 <!--
-    <menuitem name="List" id="ha_stock.menu_1_list" parent="ha_stock.menu_1"
-              action="ha_stock.action_window"/>
-    <menuitem name="Server to list" id="ha_stock" parent="ha_stock.menu_2"
-              action="ha_stock.action_server"/>
+    <menuitem name="List" id="ci_stock.menu_1_list" parent="ci_stock.menu_1"
+              action="ci_stock.action_window"/>
+    <menuitem name="Server to list" id="ci_stock" parent="ci_stock.menu_2"
+              action="ci_stock.action_server"/>
 -->
   </data>
 </odoo>
