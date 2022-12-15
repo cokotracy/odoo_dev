@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <template id="stock_cargo_entry_control_report_template" name="stock_cargo_entry_control_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>HOJA DE CONTROL DE INGRESO DE CARGA</h2>
+                        <br />
+                        <div class="row">
+                            <p t-if="o.customer_id">Cliente: <span t-field="o.customer_id"/></p>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-6">
+                                <p t-if="o.date">Fecha: <span t-field="o.date"/></p>
+                                <p t-if="o.nro_container">Nro. Contenedor: <span t-field="o.nro_container"/></p>
+                                <p t-if="o.dua">Nro. DUA de ingreso: <span t-field="o.dua"/></p>
+                                <p t-if="o.chamberos">Requiere chamberos: <span t-field="o.chamberos"/></p>
+                            </div>
+                            <div class="col-6">
+                                <p t-if="o.hora_ingreso">Hora ingreso de Transporte a andén: <span t-field="o.hora_ingreso"/></p>
+                                <p t-if="o.hora_inicio">Hora inicio de descarga: <span t-field="o.hora_inicio"/></p>
+                                <p t-if="o.hora_fin">Hora fin de descarga: <span t-field="o.hora_fin"/></p>
+                                <p t-if="o.cant_personas">Cantidad personas descargando: <span t-field="o.cant_personas"/></p>
+                                <p t-if="o.po">PO: <span t-field="o.po"/></p>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <p t-if="o.nota_embarque">Nota de embarque: <span t-field="o.nota_embarque"/></p>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <th>Nro. Tarima</th>
+                                    <th>Estado Tarima</th>
+                                    <th>Cantidad Bultos</th>
+                                    <th>Subtotal Tarimas</th>
+                                    <th>Subtotal Bultos</th>
+                                    <th>Tipo de Mercadería</th>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach='o.batch_ids' t-as='line'>
+                                        <td><t t-esc='line.nro_pallet'/></td>
+                                        <td><t t-esc="dict(line.fields_get(allfields=['pallet_state'])['pallet_state']['selection'])[line.pallet_state]"/></td>
+                                        <td><t t-esc='line.cant_bag'/></td>
+                                        <td><t t-esc='line.subtotal_pallet'/></td>
+                                        <td><t t-esc='line.subtotal_bag'/></td>
+                                        <td><t t-esc='line.merc_type'/></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-6">
+                                <p t-if="o.despal_fracc">Despaletizado o Fraccionado: <span t-field="o.despal_fracc"/></p>
+                                <p t-if="o.faltante">Faltante: <span t-field="o.faltante"/></p>
+                            </div>
+                            <div class="col-6">
+                                <p t-if="o.total_tarima">Gran Total Tarimas: <span t-field="o.total_tarima"/></p>
+                                <p t-if="o.total_bulto">Gran Total Bultos: <span t-field="o.total_bulto"/></p>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <p t-if="o.total_tarima">Embalaje de acuerdo al ingreso: <t t-esc="dict(o.fields_get(allfields=['embalaje'])['embalaje']['selection'])[o.embalaje]"/></p>
+                        </div>
+                        <br />
+                        <br />
+                        <div class="row">
+                            <div class="col-6">
+                                <p t-if="o.observation">Observaciones: <span t-field="o.observation"/></p>
+                            </div>
+                            <div class="col-6">
+                                <p t-if="o.responsible">Chequeador HA Responsable: <span t-field="o.responsible"/></p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+     </template>
+
+</odoo>

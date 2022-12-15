@@ -1,0 +1,9 @@
+<odoo>
+   <data noupdate="1">
+       <!--Email template -->
+       <record id="birthday_email_template" model="mail.template">
+           <field name="name">Email Pet Birthday Template - Send by Email</field>
+           <field name="email_from">${(object.company_id.email |safe}</field>
+       </record>
+   </data>
+</odoo>

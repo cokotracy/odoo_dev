@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Department Tree -->
+    <record id="hr_department_view_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.department.tree.inherit</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='display_name']" position="after" >
+                <field name="code" />
+                <field name="company_id" />
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- HR Department Form -->
+    <record id="hr_department_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.department.form.inherit</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="replace" >
+                <sheet>
+                    <group name="dept_name" string="Datos del Departamento">
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" placeholder="Nombre Departamento"/>
+                            </h1>
+                        </div>
+                    </group>
+                    <group name="dept_data">
+                        <field name="company_id" />
+                        <field name="manager_id" string="Jefe Departamento"/>
+                        <field name="code" string="Código Departamento"/>
+                    </group>
+                    <group name="dept_data">
+                        <field name="time_ids" nolabel="1" editable="bottom">
+                            <tree>
+                                <field name="department_id" invisible="1"/>
+                                <field name="description" />
+                                <field name="days_off" />
+                                <field name="time_start" />
+                                <field name="time_end" />
+                                <field name="time_off_start" />
+                                <field name="time_off_end" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </xpath>
+        </field>
+    </record>
+    
+</odoo>

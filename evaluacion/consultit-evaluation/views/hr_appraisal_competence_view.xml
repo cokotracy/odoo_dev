@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- HR Appraisal Competences Window Action -->
+    <record id="hr_appraisal_competence_action" model="ir.actions.act_window">
+        <field name="name">Competencias</field>
+        <field name="res_model">hr.appraisal.competence</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+
+    <!-- HR Appraisal Competences Menu -->
+    <menuitem
+        id="menu_hr_appraisal_competence"
+        action="hr_appraisal_competence_action"
+        parent="hr_appraisal.menu_hr_appraisal_configuration"
+        sequence="7"/>
+
+    <!-- HR Appraisal Competences Form -->
+    <record id="hr_appraisal_competence_form" model="ir.ui.view">
+        <field name="name">hr.appraisal.competence.form</field>
+        <field name="model">hr.appraisal.competence</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="competence" string="Competencias">
+                        <group name="competence_1">
+                            <field name="appraisal_id" />
+                            <field name="employee_id" />
+                            <field name="description" />
+                            <field name="percentage_dominance" widget="selection_badge" string="% Dominio"/>
+                        </group>
+                        <group name="competence_2">
+                            <field name="job_id" />
+                            <field name="activity_id" />
+                            <field name="date_act" />
+                            <field name="observations" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Appraisal Competences Tree -->
+    <record id="hr_appraisal_competence_tree" model="ir.ui.view">
+        <field name="name">hr.appraisal.competence.tree</field>
+        <field name="model">hr.appraisal.competence</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="appraisal_id" />
+                <field name="employee_id" />
+                <field name="job_id" />
+                <field name="description" />
+                <field name="percentage_dominance" string="% Dominio"/>
+                <field name="date_act" />
+                <field name="observations" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- HR Appraisal competence graph -->
+    <record id="hr_appraisal_competence_graph_view" model="ir.ui.view">
+        <field name="name">hr.appraisal.competence.graph_view</field>
+        <field name="model">hr.appraisal.competence</field>
+        <field name="arch" type="xml">
+            <graph string="Gráficos de Competencias">
+                <field name="description"/>
+            </graph>
+        </field>
+    </record>
+
+</odoo>

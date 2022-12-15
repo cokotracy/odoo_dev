@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="consultit-evaluation.list">
+      <field name="name">consultit-evaluation list</field>
+      <field name="model">consultit-evaluation.consultit-evaluation</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="consultit-evaluation.action_window">
+      <field name="name">consultit-evaluation window</field>
+      <field name="res_model">consultit-evaluation.consultit-evaluation</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="consultit-evaluation.action_server">
+      <field name="name">consultit-evaluation server</field>
+      <field name="model_id" ref="model_consultit-evaluation_consultit-evaluation"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="consultit-evaluation" id="consultit-evaluation.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="consultit-evaluation.menu_1" parent="consultit-evaluation.menu_root"/>
+    <menuitem name="Menu 2" id="consultit-evaluation.menu_2" parent="consultit-evaluation.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="consultit-evaluation.menu_1_list" parent="consultit-evaluation.menu_1"
+              action="consultit-evaluation.action_window"/>
+    <menuitem name="Server to list" id="consultit-evaluation" parent="consultit-evaluation.menu_2"
+              action="consultit-evaluation.action_server"/>
+-->
+  </data>
+</odoo>

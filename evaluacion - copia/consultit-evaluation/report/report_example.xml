@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="report_example" model="ir.actions.report">
+        <field name="name">Example Report</field>
+        <field name="model">hr.appraisal</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">consultit-evaluation.report_example_template</field>
+        <field name="report_file">consultit-evaluation.report_example</field>
+        <field name="binding_model_id" ref="model_hr_appraisal"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

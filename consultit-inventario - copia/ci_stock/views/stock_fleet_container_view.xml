@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Fleet Vehicle Form -->
+    <record id="fleet_vehicle_view_form_inherit" model="ir.ui.view">
+        <field name="name">fleet.vehicle.form</field>
+        <field name="model">fleet.vehicle</field>
+        <field name="inherit_id" ref="fleet.fleet_vehicle_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[1]" position="after" >
+                <group name="name" string="Contenedor">
+                    <field name="container_ids" nolabel="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

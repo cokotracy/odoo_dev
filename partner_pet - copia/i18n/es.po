@@ -1,0 +1,289 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* partner_pet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-18 17:27+0000\n"
+"PO-Revision-Date: 2022-01-18 17:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "<strong>Birthdate:</strong>"
+msgstr "Fecha Nacimiento:"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "<strong>Color:</strong>"
+msgstr "Color:"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "<strong>Race:</strong>"
+msgstr "Raza:"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "<strong>Sex:</strong>"
+msgstr "Sexo:"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "<strong>Specie:</strong>"
+msgstr "Especie:"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__activity
+msgid "Activity"
+msgstr "Actividad"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__attendance
+msgid "Attendance"
+msgstr "Asistencia"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "Avatar"
+msgstr "Avatar"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__specie__bird
+msgid "Bird"
+msgstr "Pájaro"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__specie__cat
+msgid "Cat"
+msgstr "Gato"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__color
+msgid "Color"
+msgstr "Color"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__company_id
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__company
+msgid "Company"
+msgstr "Compañía"
+
+#. module: partner_pet
+#: model:ir.model,name:partner_pet.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__specie__dog
+msgid "Dog"
+msgstr "Perro"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__exhibition
+msgid "Exhibition"
+msgstr "Exhibición"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__sex__female
+msgid "Female"
+msgstr "Hembra"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__specie__fish
+msgid "Fish"
+msgstr "Pez"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__holding_reason
+msgid "Holding Reason"
+msgstr "Razón de tenencia"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__specie__horse
+msgid "Horse"
+msgstr "Caballo"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__hunting
+msgid "Hunting"
+msgstr "Caza"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__id
+msgid "ID"
+msgstr ""
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__sex__male
+msgid "Male"
+msgstr "Macho"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__nutritional_conditions
+msgid "Nutritional Conditions"
+msgstr "Condiciones Nutricionales"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__partner_id
+msgid "Owner"
+msgstr "Dueño"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "Partner Pet Information"
+msgstr "Información de Mascota"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__pet_birthday
+msgid "Pet Birthday"
+msgstr "Fecha de Nacimiento"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__image
+msgid "Pet Image"
+msgstr "Imagene"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "Pet Information"
+msgstr "Información de Mascota"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__name
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "Pet Name"
+msgstr "Nombre Mascota"
+
+#. module: partner_pet
+#: model_terms:ir.ui.view,arch_db:partner_pet.view_partner_form_inherit
+msgid "Pet's Name"
+msgstr "Nombre Mascota"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner__pet_ids
+#: model:ir.model.fields,field_description:partner_pet.field_res_users__pet_ids
+msgid "Pets"
+msgstr "Mascotas"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__pleasures
+msgid "Pleasures"
+msgstr "Gustos"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__race
+msgid "Race"
+msgstr "Raza"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__reproduction
+msgid "Reproduction"
+msgstr "Reproducción"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__specie__reptile
+msgid "Reptile"
+msgstr "Reptil"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__specie__rodent
+msgid "Rodent"
+msgstr "Roedor"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__security
+msgid "Security"
+msgstr "Seguridad"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__send_birthday_email
+msgid "Send Brithday Email"
+msgstr "Enviar mail de cumpleaños"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__sex
+msgid "Sex"
+msgstr "Sexo"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__special_cares
+msgid "Special Cares"
+msgstr "Cuidados Especiales"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__specie
+msgid "Specie"
+msgstr "Especie"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__sports
+msgid "Sports"
+msgstr "Deportes"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__sterilized_castrated
+msgid "Sterilized/Castrated"
+msgstr "Estrilizado/Castrado"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__therapy
+msgid "Therapy"
+msgstr "Terapia"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__toys
+msgid "Toys"
+msgstr "Juguetes"
+
+#. module: partner_pet
+#: model:ir.model.fields,field_description:partner_pet.field_res_partner_pet__weight
+msgid "Weight"
+msgstr "Peso"
+
+#. module: partner_pet
+#: model:ir.model.fields.selection,name:partner_pet.selection__res_partner_pet__holding_reason__work
+msgid "Work"
+msgstr "Trabajo"
+
+#. module: partner_pet
+#: model:ir.model,name:partner_pet.model_res_partner_pet
+msgid "res.partner.pet"
+msgstr ""

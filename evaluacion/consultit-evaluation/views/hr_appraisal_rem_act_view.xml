@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- HR Remedial Activity Window Action -->
+    <record id="hr_appraisal_remedial_activity_action" model="ir.actions.act_window">
+        <field name="name">Actividades Remediales</field>
+        <field name="res_model">hr.appraisal.remedial.activity</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Remedial Activity Menu -->
+    <menuitem
+        id="menu_hr_appraisal_remedial_activity"
+        action="hr_appraisal_remedial_activity_action"
+        parent="hr_appraisal.menu_hr_appraisal_configuration"
+        sequence="6"/>
+
+    <!-- HR Remedial Activity Form -->
+    <record id="hr_appraisal_remedial_activity_form" model="ir.ui.view">
+        <field name="name">hr.appraisal.remedial.activity.form</field>
+        <field name="model">hr.appraisal.remedial.activity</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="rem_act" string="Actividades Remediales">
+                        <group name="rem_act_1">
+                            <field name="description" />
+                            <field name="job_id" />
+                            <field name="time_start" />
+                        </group>
+                        <group name="rem_act_2">
+                            <field name="time_req" />
+                            <field name="area_id" />
+                            <field name="observations" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Remedial Activity Tree -->
+    <record id="hr_appraisal_remedial_activity_tree" model="ir.ui.view">
+        <field name="name">hr.appraisal.remedial.activity.tree</field>
+        <field name="model">hr.appraisal.remedial.activity</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="description" />
+                <field name="job_id" />
+                <field name="time_start" />
+                <field name="time_req" />
+                <field name="area_id" />
+                <field name="observations" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="stock_scrap_report_template" name="stock_scrap_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                            <h2>Información de Rechazo de Producto</h2>
+                            <br />
+                            <div class="row">
+                                <div class="col-6">
+                                    <p t-if="o.partner_id">Proveedor: <span t-field="o.partner_id"/></p>
+                                    <p t-if="o.po_line">Nro. PO y Línea: <span t-field="o.po_line"/></p>
+                                    <p t-if="o.nro_invoice">Nro. Factura: <span t-field="o.nro_invoice"/></p>
+                                    <p t-if="o.nro_material">Proveedor: <span t-field="o.nro_material"/></p>
+                                    <p t-if="o.vendor_batch_material">Vendor batch de material: <span t-field="o.vendor_batch_material"/></p>
+                                    <p t-if="o.nro_container == 'o'">Nro. Contenedor: <span t-field="o.nro_container"/></p>
+                                    <p t-if="o.cant_received">Cantidad recibida: <span t-field="o.cant_received"/></p>
+                                    <p t-if="o.nro_material">Cantidad rechazada: <span t-field="o.scrap_qty"/></p>
+                                </div>
+                                <div class="col-6">
+                                    <p t-if="o.date">Fecha: <span t-field="o.date"/></p>
+                                    <br />
+                                    <p>Descripción de Daños</p>
+                                    <p t-if="o.desc_damage"><span t-field="o.desc_damage"/></p>
+                                    <p t-if="o.desc_damage == 'o'">Descripción: <span t-field="o.other_description"/></p>
+                                    <br />
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <p t-if="o.description">Descripción del Evento: <span t-field="o.description"/></p>
+                            </div>
+                            <div class="row">
+                                 <div class="col-6">
+                                    <p t-if="o.recibo">Recibido por: <span t-field="o.recibo"/></p>
+                                 </div>
+                                 <div class="col-6">
+                                    <p t-if="o.revisado">Revisado por: <span t-field="o.revisado"/></p>
+                                 </div>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="row">
+                                <table class="table table-condensed">
+                                    <thead>
+                                        <th>Imagen</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr t-foreach='o.images_ids' t-as='images_line'>
+                                            <td> <img t-if="images_line.image" t-att-src="'data:image/png;base64,%s' % to_text(images_line.image)" style="max-height: 250px;max-width: 250px;"/></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

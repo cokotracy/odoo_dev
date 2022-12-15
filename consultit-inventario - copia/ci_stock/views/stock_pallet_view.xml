@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> 
+
+    <!-- stock_pallet Tree -->
+    <record id="stock_pallet_tree" model="ir.ui.view">
+        <field name="name">stock.pallet.tree</field>
+        <field name="model">stock.pallet</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nro_tarima" />
+                <field name="container_id" />
+                <field name="pallet_select_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- stock_pallet Form -->
+    <record id="stock_pallet_form" model="ir.ui.view">
+        <field name="name">stock.pallet.form</field>
+        <field name="model">stock.pallet</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="stock_container_data" string="Datos del Contenedor">
+                        <group name="stock_dua_data1">
+                            <field name="nro_tarima" />
+                            <field name="container_id" />
+                            <field name="pallet_select_ids" widget="many2many_checkboxes" string="Tipo Tarima"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+</odoo>

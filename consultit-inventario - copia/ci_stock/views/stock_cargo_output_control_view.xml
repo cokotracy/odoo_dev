@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- stock_cargo_output_control Window Action -->
+    <record id="stock_cargo_output_control_action" model="ir.actions.act_window">
+        <field name="name">Control Salida de Carga</field>
+        <field name="res_model">stock.cargo.output.control</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- stock_cargo_output_control  Menu -->
+    <menuitem
+        id="menu_stock_cargo_output_control"
+        action="stock_cargo_output_control_action"
+        parent="stock.menu_stock_warehouse_mgmt"
+        sequence="4"/>
+
+    <!-- stock_cargo_output_control Tree -->
+    <record id="stock_cargo_output_control_tree" model="ir.ui.view">
+        <field name="name">stock.cargo.output.control.tree</field>
+        <field name="model">stock.cargo.output.control</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sheet_number" />
+                <field name="container_id" />
+                <field name="date" />
+                <field name="responsible" />
+            </tree>
+        </field>
+    </record>
+
+    <!-- stock_cargo_output_control Form -->
+    <record id="stock_cargo_output_control_form" model="ir.ui.view">
+        <field name="name">stock.cargo.output.control.form</field>
+        <field name="model">stock.cargo.output.control</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button string="Notificar Usuario" name="action_user_notification" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" type="object" name="action_create_picking" icon="fa-truck">
+                            <div class="o_stat_info">
+                                <field name="picking_count" />
+                                <span class="o_stat_text">Pickings</span>
+                            </div>
+                        </button>
+                    </div>
+                    <group name="sheet_number">
+                        <field name="sheet_number" string="Nro. Hoja de Control"/>
+                    </group>
+                    <group name="stock_cargo_entry_data" string="Hoja de Control de Ingreso de Carga">
+                        <group name="stock_cargo_entry_data1">
+                            <field name="date" />
+                            <p>Ubicaciones en Almacén</p>
+                            <field name="picking_type_id" string="Tipo de Operación"/>
+                            <field name="location_id" string="Ubicación"/>
+                            <field name="location_dest_id" string="Ubicación destino"/>
+                        </group>
+                        <group name="stock_cargo_entry_data2">
+                            <field name="customer_id" />
+                            <field name="user_id" />
+                        </group>
+                    </group>
+                    <group name="batch" string="Batches">
+                        <field name="batch_ids" nolabel="1"/>
+                    </group>
+                    <group name="pickings" string="Transferencias">
+                        <field name="picking_ids" nolabel="1"/>
+                    </group>
+                    <group name="observation">
+                        <field name="observation" />
+                    </group>
+                    <group name="responsible">
+                        <field name="responsible" />
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" />
+                    <field name="message_ids" />
+                    <field name="activity_ids" />
+                </div>
+            </form>
+        </field>
+    </record>
+</odoo>

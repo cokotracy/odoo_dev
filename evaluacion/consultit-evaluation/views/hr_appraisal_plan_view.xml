@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_appraisal_plan_view_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.appraisal.plan.tree.inherit</field>
+        <field name="model">hr.appraisal.plan</field>
+        <field name="inherit_id" ref="hr_appraisal.view_hr_appraisal_plan_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='event']" position="after" >
+                <field name="name" />
+                <field name="code" />
+                <field name="observations" />
+                <field name="family_id" />
+            </xpath>
+            <xpath expr="//field[@name='duration']" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='event']" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

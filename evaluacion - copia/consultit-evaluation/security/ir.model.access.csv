@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_appraisal_period,access_hr_appraisal_period,model_hr_appraisal_period,base.group_user,1,1,1,1
+access_hr_appraisal_remedial_activity,access_hr_appraisal_remedial_activity,model_hr_appraisal_remedial_activity,base.group_user,1,1,1,1
+access_hr_appraisal_competence,access_hr_appraisal_competence,model_hr_appraisal_competence,base.group_user,1,1,1,1
+access_hr_job_family,access_hr_job_family,model_hr_job_family,base.group_user,1,1,1,1
+access_hr_department_time,access_hr_department_time,model_hr_department_time,base.group_user,1,1,1,1

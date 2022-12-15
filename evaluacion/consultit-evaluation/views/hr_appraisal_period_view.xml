@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Appraisal Period action -->
+    <record id='hr_appraisal_period_action' model='ir.actions.act_window'>
+        <field name="name">Períodos de Evaluaciones</field>
+        <field name="res_model">hr.appraisal.period</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Appraisal Period menu -->
+    <menuitem
+        id="menu_hr_appraisal_period_tree"
+        action="hr_appraisal_period_action"
+        parent="hr_appraisal.menu_hr_appraisal_root"
+        sequence="0"/>
+
+    <!-- HR Appraisal Period Form -->
+    <record id="hr_appraisal_period_form" model="ir.ui.view">
+        <field name="name">hr.appraisal.period.form</field>
+        <field name="model">hr.appraisal.period</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="period" string="Periódo de Evaluación">
+                        <field name="date_start" />
+                        <field name="date_end" />
+                        <field name="year" />
+                    </group>
+                    <group name="evals" string="Evaluaciones">
+                        <field name="appraisal_ids" nolabel="1">
+                            <tree>
+                                <field name="period_id" invisible="1"/>
+                                <field name="employee_id" />
+                                <field name="job_id" />
+                                <field name="state" />
+                            </tree>
+                        </field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Appraisal Period Tree View -->
+    <record id="hr_appraisal_period_tree" model="ir.ui.view">
+        <field name="name">hr.appraisal.period.tree</field>
+        <field name="model">hr.appraisal.period</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="year" />
+                <field name="date_start" />
+                <field name="date_end" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

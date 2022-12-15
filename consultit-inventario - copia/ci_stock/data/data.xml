@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="multi_select_bien" model="stock.embalaje">
+            <field name="id">1</field>
+            <field name="name">Bien</field>
+        </record>
+
+        <record id="multi_select_abierto" model="stock.embalaje">
+            <field name="id">2</field>
+            <field name="name">Abierto</field>
+        </record>
+
+        <record id="multi_select_humedo" model="stock.embalaje">
+            <field name="id">3</field>
+            <field name="name">Húmedo</field>
+        </record>
+
+        <record id="multi_select_vacio" model="stock.embalaje">
+            <field name="id">4</field>
+            <field name="name">Vacío</field>
+        </record>
+
+        <record id="multi_select_golpeado" model="stock.embalaje">
+            <field name="id">5</field>
+            <field name="name">Golpeado</field>
+        </record>
+        
+        <record id="multi_select_roto" model="stock.embalaje">
+            <field name="id">6</field>
+            <field name="name">Roto</field>
+        </record>
+
+        <record id="multi_select_quebrado" model="stock.embalaje">
+            <field name="id">7</field>
+            <field name="name">Quebrado</field>
+        </record>
+
+        <record id="multi_select_ingreso" model="stock.pallet.select">
+            <field name="id">1</field>
+            <field name="name">Ingreso</field>
+        </record>
+
+        <record id="multi_select_transitorio" model="stock.pallet.select">
+            <field name="id">2</field>
+            <field name="name">Transitorio</field>
+        </record>
+
+        <record id="multi_select_etiquetada" model="stock.pallet.select">
+            <field name="id">3</field>
+            <field name="name">Etiquetada</field>
+        </record>
+
+        <record id="multi_select_limpieza" model="stock.pallet.select">
+            <field name="id">4</field>
+            <field name="name">Limpieza</field>
+        </record>
+
+        <record id="multi_select_armado" model="stock.pallet.select">
+            <field name="id">5</field>
+            <field name="name">Armado</field>
+        </record>
+
+        <record id="multi_select_rechazada" model="stock.pallet.select">
+            <field name="id">6</field>
+            <field name="name">Rechazada</field>
+        </record>
+
+    </data>
+    
+</odoo>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Job Family action -->
+    <record id="hr_job_family_action" model="ir.actions.act_window">
+        <field name="name">Familia de Cargos</field>
+        <field name="res_model">hr.job.family</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- HR Job Family  menu -->
+    <menuitem
+        id="menu_hr_job_family_tree"
+        action="hr_job_family_action"
+        parent="hr.menu_human_resources_configuration"
+        sequence="0"/>
+
+    <!-- HR Job Family Form -->
+    <record id="hr_job_family_form" model="ir.ui.view">
+        <field name="name">hr.job.family.form</field>
+        <field name="model">hr.job.family</field>
+        <field name="arch" type="xml">
+            <form>
+                <group name="description">
+                    <field name="description" />
+                </group>
+                <group name="values" string="Niveles">
+                    <field name="level1" widget="percentage"/>
+                    <field name="level2" widget="percentage"/>
+                    <field name="level3" widget="percentage"/>
+                    <field name="level4" widget="percentage"/>
+                    <field name="level5" widget="percentage"/>
+                    <field name="level6" widget="percentage"/>
+                    <field name="level7" widget="percentage"/>
+                    <field name="level8" widget="percentage"/>
+                    <field name="total" widget="percentage"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- HR Job Family Tree View -->
+    <record id="hr_job_family_tree" model="ir.ui.view">
+        <field name="name">hr.job.family.tree</field>
+        <field name="model">hr.job.family</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="description" />
+                <field name="level1"/>
+                <field name="level2"/>
+                <field name="level3"/>
+                <field name="level4"/>
+                <field name="level5"/>
+                <field name="level6"/>
+                <field name="level7"/>
+                <field name="level8"/>
+            </tree>
+        </field>
+    </record>
+
+</odoo>

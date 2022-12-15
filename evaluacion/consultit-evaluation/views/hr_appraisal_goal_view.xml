@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- HR Appraisal Goal Form -->
+    <record id="hr_appraisal_goal_form_inherit" model="ir.ui.view">
+        <field name="name">hr.appraisal.goal.form.inherit</field>
+        <field name="model">hr.appraisal.goal</field>
+        <field name="inherit_id" ref="hr_appraisal.hr_appraisal_goal_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='deadline']" position="attributes" >
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='manager_id']" position="attributes" >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes" >
+                <attribute name="readonly">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='progression']" position="attributes" >
+                <attribute name="string">% Cumplimiento</attribute>
+            </xpath>
+            <xpath expr="//field[@name='deadline']" position="before" >
+                <field name="type" />
+                <field name="date_start" />
+                <field name="date_end" />
+                <field name="activity_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <!-- HR Appraisal Goal Tree -->
+    <record id="hr_appraisal_goal_tree_inherit" model="ir.ui.view">
+        <field name="name">hr.appraisal.goal.tree.inherit</field>
+        <field name="model">hr.appraisal.goal</field>
+        <field name="inherit_id" ref="hr_appraisal.hr_appraisal_goal_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='manager_id']" position="attributes" >
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <xpath expr="//field[@name='employee_id']" position="attributes" >
+                <attribute name="string">Empleado</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

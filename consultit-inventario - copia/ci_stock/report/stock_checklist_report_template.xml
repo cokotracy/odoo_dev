@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="stock_checklist_report_template" name="stock_checklist_report_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Nro. Documento: <span t-field="o.nro_doc"/></p>
+                                    <p>Tipo: <span t-field="o.type"/></p>
+                                    <p>Fase: <span t-field="o.phase"/></p>
+                                    <p>Dueño del documento: <span t-field="o.document_owner"/></p>
+                                </div>
+                                <div class="col-6">
+                                    <p>Título: <span t-field="o.title"/></p>
+                                    <p>Nro. de revisión: <span t-field="o.nro_revision"/></p>
+                                    <p>Fecha de Publicación: <span t-field="o.date_published"/></p>
+                                    <p>Clasificación: <span t-field="o.classification"/></p>
+                                </div>
+                            </div>
+                            <br />
+                            <br />
+                            <h2>Checklist de recibo</h2>
+                            <br />
+                            <p>COPIA NO CONTROLADA - COPIA IMPRESA VÁLIDA POR 5 DÍAS - LAS EXCEPCIONES SON FORMULARIOS QUE SON VÁLIDOS POR LA DURACIÓN DE USO</p>
+                            <br />
+                            <div class="row">
+                                <div class="col-6">
+                                    <p>Instrucciones</p>
+                                    <p >Anote un check (✓) si se cumple el criterio.</p>
+                                    <p>Deje en blanco si no se cumple el criterio.</p>
+                                </div>
+                                <div class="col-6">_
+                                    <p>Fecha: <span t-field="o.date"/></p>
+                                    <p>Nro. Contenedor: <span t-field="o.nro_container"/></p>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <h4>Antes de la descarga de Material</h4>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col col-lg-2">
+                                    <p>Revisión documental, ¿el número de contenedor coincide con el DUA? <input type="checkbox" t-att-checked="o.dua_match"/></p>
+                                    <p>¿El número de marchamo del camión coincide con la documentación? <input type="checkbox" t-att-checked="o.nro_label_truck"/></p>
+                                    <p>¿El marchamo se encuentra íntegro (no está roto y la numeración es legible)? <input type="checkbox" t-att-checked="o.label_integrity"/></p>
+                                    <p>¿El transporte cuenta con un termokin en buen estado? <input type="checkbox" t-att-checked="o.termokin_condition"/></p>
+                                    <p>En caso de que el transporte sea de temperatura controlada, anotar el valor (ºC) <input type="checkbox" t-att-checked="o.temperature_value"/></p>
+                                    <p>Ambiente(11°C - 30°C) // Refrigerado(4°C - 10°C) // Congelado(-16°C - -20°C)</p>
+                                    <p>¿El contenedor se encuentra cerrado (no hay huecos en techo, piso, paredes, etc)? <input type="checkbox" t-att-checked="o.container_closed"/></p>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <h4>Durante y después de la descarga de material</h4>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col col-lg-2">
+                                    <p>¿Libre de olores extraños (detergente, pintura, cloro, insecticidas, entre otros)? <input type="checkbox" t-att-checked="o.strange_odors"/></p>
+                                    <p>¿Hay polvos suspendidos o neblinas? <input type="checkbox" t-att-checked="o.dust_mist"/></p>
+                                    <p>¿Hay derrames de ingredientes, pozos de agua o algún otro material? <input type="checkbox" t-att-checked="o.spill_hole"/></p>
+                                    <p>¿La limpieza general es aceptable (sin polvo, suciedad, plagas, escombros)? <input type="checkbox" t-att-checked="o.cleanliness_acceptable"/></p>
+                                    <p>¿La carga no viene mezclada con materiales que no sean compatibles con materiales de consumo humano (plaguicidas, detergentes, medicinas, químicos)? <input type="checkbox" t-att-checked="o.load_mixed"/></p>
+                                    <p>¿El material se encuentra limpio, libre de polvo, escombros, entre otros? <input type="checkbox" t-att-checked="o.clean_dust_debris"/></p>
+                                    <p>¿El material presenta olores extraños que sugieran que está fugando o que está contaminado? <input type="checkbox" t-att-checked="o.odor_leaking_contaminated"/></p>
+                                    <p>¿Las tarimas están en buenas condiciones, libres de moho, focos de contaminación visible, malos olores, clavos o tornillos expuestos, piezas quebradas o astilladas, entre otros? <input type="checkbox" t-att-checked="o.pallet_condition"/></p>
+                                    <p>¿Los tambores, sacos, bolsas u otro material de empaque primario/secundario que contenga el producto está perforado, fugando o deformado? <input type="checkbox" t-att-checked="o.sack_bag_drum_leaking"/></p>
+                                    <p>¿El material cuenta con identificación del proveedor, el cual, incluye como mínimo lote, tipo de material y nombre del proveedor? <input type="checkbox" t-att-checked="o.material_supplier_id"/></p>
+                                    <p>¿La información de la etiqueta del material es legible? <input type="checkbox" t-att-checked="o.label_info"/></p>
+                                    <p>¿Los materiales tienen sellos, cintas u otros mecanismos de seguridad, y este se encuentra íntegro e identificado por la casa de manufactura? <input type="checkbox" t-att-checked="o.security_mechanism"/></p>
+                                    <p>¿La temperatura está de acuerdo al tipo de material, sin humedad excesiva que dañe la materia prima, material de empaque, entre otros? <input type="checkbox" t-att-checked="o.temperature_material"/></p>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col col-lg-2">
+                                    <p>Elaborado Por</p>
+                                    <p>Responsable: <span t-field="o.responsible"/></p>
+                                </div>
+                            </div>
+                        <br />
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
